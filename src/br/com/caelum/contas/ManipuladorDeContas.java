@@ -1,7 +1,6 @@
 package br.com.caelum.contas;
-import com.banco.domain.*;
-import br.com.caelum.javafx.api.util.Evento;
-
+/*import br.com.caelum.javafx.api.util.Evento;
+/*
 public class ManipuladorDeContas(Evento evento) {
 
 	private Conta conta;
@@ -11,4 +10,4 @@ public class ManipuladorDeContas(Evento evento) {
 		this.conta.setTitular("Batman");
 		this.conta.setIdentificador(12345);
 	}
-}
+}*/

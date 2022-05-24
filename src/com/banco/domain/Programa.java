@@ -6,7 +6,7 @@ public class Programa {
 		
 		Gerente gerente = new Gerente();
 		gerente.setSalario(10000);
-		Funcionario funcionario = new Funcionario();
+		Funcionario funcionario = new Diretor();
 		gerente.setSenha(1234);
 		funcionario.nome = "Joao";
 		boolean autentica;
