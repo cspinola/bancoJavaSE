@@ -6,16 +6,15 @@ public class Programa {
 		
 		Gerente gerente = new Gerente();
 		gerente.setSalario(10000);
-		Funcionario f = new Funcionario("Joao");
+		Funcionario funcionario = new Funcionario();
 		gerente.setSenha(1234);
+		funcionario.nome = "Joao";
 		boolean autentica;
 		
 		autentica = gerente.autentica(1234);
 		
 		System.out.println(autentica);
 		System.out.println(gerente.getBonificacao());
-		System.out.println(gerente.getSalario());
-		System.out.println(f.nome);
 		/*
 		Conta minhaConta1 = new Conta();
 		Conta minhaConta2 = new Conta();

@@ -42,18 +42,7 @@ public class Conta {
 	public static int getTotaldeContas(){
 		return	Conta.totaldeContas;
 	}
-	/*
-	public boolean equals(Object object){
-		//Verifica se o objeto é nulo
-		if (object == null){
-			return false;
-		}
-		if (this.numero == object.numero && this.agencia.equals(object.agencia)){
-			return true;
-		}
-		return false;
-	}
-	*/
+	
 	
 	public void mudaCPF(String cpf){
 		validaCPF(cpf);
@@ -66,7 +55,9 @@ public class Conta {
 		this.identificador = identificador;
 	}
 	
+	
 	private void validaCPF(String cpf){
+	
 	}
 	
 	public void setAgencia(String agencia){
@@ -89,38 +80,23 @@ public class Conta {
 		this.titular = nome;
 	}
 	
-/*
-	public boolean saca(double valor){
-		if (this.saldo < valor){
-			return false;
-		} else {
-			this.saldo -= valor;
-			return true;
-		}
-	}*/
-	
-	/*public void saca(double valor){
-		if (valor > this.saldo){
-			System.out.println("Nao foi posssivel sacar um valor maior que o saldo!");
-		}else {
-			this.saldo -= valor;
-		}
+	/*
+	boolean saca(double quantidade){
+		double novoSaldo = this.saldo - quantidade;
+		this.saldo -= quantidade;
+		return true;
 	}*/
 	
 	public void saca(double valor){
-		if (this.saldo < valor || valor < 0){
-			throw new IllegalArgumentException("O valor do saque é superior ao saldo ou negativo.");
-		} else {
+		if (valor > this.saldo){
+			System.out.println("Nï¿½o ï¿½ possï¿½vel sacar um valor maior que o saldo!");
+		}else {
 			this.saldo -= valor;
 		}
 	}
 	
-	void deposita(double valor){
-		if (valor < 0){
-			throw new IllegalArgumentException("Apenas valores positivos são permitidos.");
-		}else {
-			this.saldo += valor;
-		}
+	void deposita(double quantidade){
+		this.saldo += quantidade;
 	}
 	/*
 	void transfere(Conta destino, double valor){
@@ -153,7 +129,7 @@ public class Conta {
 		// this.saldo = this.saldo
 		return this.saldo*this.rendimento;
 	}
-	
+		
 	public String Imprime(){
 		String dados;
 		dados = "Identificador: " + this.identificador;
@@ -165,19 +141,6 @@ public class Conta {
 		dados += "\n Tipo: " + this.getTipo();
 		System.out.println(dados);
 		return dados;
-	}
-	
-	//Metodo Imprime objeteo Conta com JavaLang!!!
-	//Permite a Impressão via System.out.println("Conta: " + Conta)
-	//@Override
-	public String toString(){
-		return "Identificador: " + this.identificador
-		 + "\nTitular da Conta: " + this.titular
-		 + "\n O Saldo ï¿½: " + this.saldo
-		 + "\n A Agï¿½ncia ï¿½: " + this.agencia
-		 + "\n O num da conta ï¿½: " + this.numero
-		 + "\n Data de abertura: " + this.dataAbertura
-		 + "\n Tipo: " + this.getTipo();
 	}
 	
 	public String getTipo(){
